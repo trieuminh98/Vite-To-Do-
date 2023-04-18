@@ -1,7 +1,6 @@
 import { useRoutes } from 'react-router-dom'
-import { PATH } from '~/commons/constants'
-import LoginPage from '~/pages/login'
-import TodoPage from '~/pages/todo'
+import Home from '~/pages/home'
+import Layout from './Layout'
 import Wrapper from './Wrapper'
 
 const Routes = () => {
@@ -10,16 +9,13 @@ const Routes = () => {
       element: <Wrapper />,
       children: [
         {
-          path: PATH.LOGIN,
-          element: <LoginPage />
-        },
-        {
-          path: PATH.TODO,
-          element: <TodoPage />
-        },
-        {
-          path: '/',
-          element: <LoginPage />
+          element: <Layout />,
+          children: [
+            {
+              path: '/',
+              element: <Home />
+            }
+          ]
         }
       ]
     }
