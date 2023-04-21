@@ -1,0 +1,10 @@
+@import '~/styles/variables.scss';
+
+.init {
+  height: rem(1px);
+  width: rem(100%);
+}
+
+.grey_001 {
+  background-color: $grey_001;
+}

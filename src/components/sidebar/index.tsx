@@ -1,38 +1,124 @@
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from '@mui/material'
+import AddIcon from '@mui/icons-material/Add'
+import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import {
+  ExploreIcon,
+  FollowIcon,
+  LibraryIcon,
+  NewSongsIcon,
+  RadioIcon,
+  ThemeAndCategoryIcon,
+  Top100Icon,
+  ZingChartIcon,
+  ZingLogo
+} from '~/assets/svgs'
+import MVIcon from '~/assets/svgs/mvIcon'
 import { DRAWER_WIDTH } from '~/commons/constants'
-import { Box, Divider } from '~/elements'
-import { SideBarProps } from './sideBar.type'
+import { Box, Button, Divider, Typography } from '~/elements'
+import { BUTTON_STYLES } from '~/elements/button'
+import { DIVIDER_STYLES } from '~/elements/divider'
+import Colors from '~/styles/colors.json'
+import { convertToRem } from '~/utils/styleUtils'
+import styles from './sidebar.module.scss'
+import { SideBarProps } from './sidebar.type'
+
+const SidebarMenuData = [
+  {
+    title: 'library',
+    icon: <LibraryIcon />
+  },
+  {
+    title: 'explore',
+    icon: <ExploreIcon />
+  },
+  {
+    title: 'zingChart',
+    icon: <ZingChartIcon />
+  },
+  {
+    title: 'radio',
+    icon: <RadioIcon />
+  },
+  {
+    title: 'follow',
+    icon: <FollowIcon />
+  }
+]
+
+const SidebarMenuData_2 = [
+  {
+    title: 'newSongs',
+    icon: <NewSongsIcon />
+  },
+  {
+    title: 'themeAndCategory',
+    icon: <ThemeAndCategoryIcon />
+  },
+  {
+    title: 'top100',
+    icon: <Top100Icon />
+  },
+  {
+    title: 'mv',
+    icon: <MVIcon />
+  }
+]
 
 const Sidebar = ({ handleDrawerToggle, mobileOpen }: SideBarProps) => {
   const drawer = (
-    <div>
-      <Toolbar />
-      <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>{index % 2 === 0 ? 'aaa' : 'bbbb'}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>{index % 2 === 0 ? 'aaaa' : 'bbbb'}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </div>
+    <Box className={styles.drawer_cotainer}>
+      <Box>
+        <Box className={styles.logo_box}>
+          <ZingLogo />
+        </Box>
+        <List className={styles.drawer}>
+          {SidebarMenuData.map((i, index) => (
+            <ListItem key={index} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>{i.icon}</ListItemIcon>
+                <ListItemText
+                  primary={
+                    <Typography bold="2xl" size="2sm">
+                      {i.title}
+                    </Typography>
+                  }
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+        <Box p={`0 ${convertToRem(25)}`}>
+          <Divider defaultStyle={DIVIDER_STYLES.GREY_001} />
+        </Box>
+        <List className={styles.drawer}>
+          {SidebarMenuData_2.map((i, index) => (
+            <ListItem key={index} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>{i.icon}</ListItemIcon>
+                <ListItemText
+                  primary={
+                    <Typography bold="2xl" size="2sm">
+                      {i.title}
+                    </Typography>
+                  }
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+      <Box>
+        <Button sx={{ borderTop: `1px solid ${Colors.grey_001}` }} defaultStyle={BUTTON_STYLES.WHITE_COLOR}>
+          <AddIcon />
+          &ensp;
+          <Typography sx={{ mr: 4 }} bold="2xl" size="md" tAlign="center">
+            createNewPlayList
+          </Typography>
+        </Button>
+      </Box>
+    </Box>
   )
   return (
-    <Box>
+    <Box className={styles.sidebar_container}>
       <Drawer
         variant="temporary"
         open={mobileOpen}

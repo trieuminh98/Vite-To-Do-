@@ -1,0 +1,13 @@
+@import '~/styles/variables.scss';
+
+.init {
+  width: 100%;
+  height: rem(54px);
+}
+
+.white_color {
+  color: $white;
+  svg {
+    fill: $white;
+  }
+}

@@ -1,0 +1,23 @@
+@import '~/styles/variables.scss';
+
+.sidebar_container {
+  .drawer_cotainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $purple_231;
+    .logo_box {
+      padding: rem(8px) rem(25px) rem(8px) rem(28px);
+    }
+    .drawer {
+      color: $white;
+      svg {
+        fill: $white;
+      }
+    }
+    .red {
+      background-color: red;
+    }
+  }
+}

@@ -1,6 +1,20 @@
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-Regular.ttf), url(~/assets/fonts/Inter/Inter-Bold.ttf),
+    url(~/assets/fonts/Inter/Inter-Black.ttf), url(~/assets/fonts/Inter/Inter-Light.ttf),
+    url(~/assets/fonts/Inter/Inter-Medium.ttf), url(~/assets/fonts/Inter/Inter-Thin.ttf),
+    url(~/assets/fonts/Inter/Inter-ExtraLight.ttf), url(~/assets/fonts/Inter/Inter-SemiBold.ttf),
+    url(~/assets/fonts/Inter/Inter-ExtraBold.ttf);
+}
+
 @import './variables.scss';
 @import './mixins.scss';
 @import 'sass-rem';
+
+body {
+  font-family: 'Inter';
+  min-height: 100vh;
+}
 
 div[role='button'],
 button {
@@ -15,12 +29,12 @@ button {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $grey-300;
+  background: $grey_300;
   border-radius: rem(8px);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $grey-400;
+  background: $grey_400;
   border-radius: rem(8px);
 }

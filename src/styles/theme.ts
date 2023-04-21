@@ -4,18 +4,18 @@ import { convertToRem } from '~/utils/styleUtils'
 
 const theme = createTheme({
   palette: {
-    primary: {
-      // light: will be calculated from palette.primary.main,
-      main: '#ff4400'
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
-    },
-    secondary: {
-      light: '#0066ff',
-      main: '#0044ff',
-      // dark: will be calculated from palette.secondary.main,
-      contrastText: '#ffcc00'
-    },
+    // primary: {
+    //   // light: will be calculated from palette.primary.main,
+    //   // main: '#ff4400'
+    //   // dark: will be calculated from palette.primary.main,
+    //   // contrastText: will be calculated to contrast with palette.primary.main
+    // },
+    // secondary: {
+    //   light: '#0066ff',
+    //   main: '#0044ff',
+    //   // dark: will be calculated from palette.secondary.main,
+    //   contrastText: '#ffcc00'
+    // },
     // Provide every color token (light, main, dark, and contrastText) when using
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
@@ -27,12 +27,13 @@ const theme = createTheme({
   },
   typography: {
     allVariants: {
-      fontFamily: 'Pretendard',
+      fontFamily: 'Inter',
       fontSize: convertToRem(14),
       fontWeight: 400,
-      color: '#070707',
+      color: 'inherit',
       lineHeight: convertToRem(20),
-      letterSpacing: 0
+      letterSpacing: 0,
+      textTransform: 'none'
     }
   },
   spacing: 8,
