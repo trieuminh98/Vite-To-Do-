@@ -1,5 +1,6 @@
 //Constants
 export const DRAWER_WIDTH = 240
+export const DRAWER_WIDTH_2 = 70
 //Enums
 export enum PATH {
   LOGIN = 'LOGIN',

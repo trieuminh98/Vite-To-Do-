@@ -17,6 +17,5 @@ export type CSSTextStyles = {
   size?: FontSizeKeys
   lHeight?: number | string
   lSpacing?: number | string
-  tAlign?: 'center' | 'left' | 'right' | 'inherit' | 'justify' | undefined
   color?: keyof typeof Colors
 }

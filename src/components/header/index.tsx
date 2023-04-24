@@ -1,22 +1,20 @@
 import { Toolbar } from '@mui/material'
-import { IconButton, Typography } from '~/elements'
-import { HeaderProps } from './header.type'
+import { IconButton } from '~/elements'
 
-const Header = ({ handleDrawerToggle }: HeaderProps) => {
+const Header = ({ open, handleDrawerOpen }: any) => {
   return (
     <Toolbar>
       <IconButton
         color="inherit"
         aria-label="open drawer"
         edge="start"
-        onClick={handleDrawerToggle}
-        sx={{ mr: 2, display: { sm: 'none' } }}
+        sx={{
+          marginRight: 5
+          // ...(open && { display: 'none' })
+        }}
       >
-        zzz
+        xxx
       </IconButton>
-      <Typography variant="h6" noWrap component="div">
-        Responsive drawer
-      </Typography>
     </Toolbar>
   )
 }

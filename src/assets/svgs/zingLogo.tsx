@@ -1,6 +1,6 @@
 const ZingLogo = ({ height = 50, width = 130 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox={`0 0 959 288`}>
-    <g fill="none" fill-rule="evenodd">
+    <g fill="none" fillRule="evenodd">
       <g>
         <g>
           <path

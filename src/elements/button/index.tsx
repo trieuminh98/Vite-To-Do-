@@ -3,7 +3,7 @@ import { concatenateStr } from '~/utils/stringUtils'
 import styles from './button.module.scss'
 
 export enum BUTTON_STYLES {
-  WHITE_COLOR = 'WHITE_COLOR'
+  TRANSPARENT = 'TRANSPARENT'
 }
 
 export type ButtonProps = MButtonProps & {

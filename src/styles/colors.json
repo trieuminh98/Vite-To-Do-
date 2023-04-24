@@ -4,5 +4,7 @@
   "grey_001": "hsla(0, 0%, 100%, 0.1)",
   "white": "#ffffff",
   "purple_231": "#231b2e",
-  "white_3A3": "#3a3243"
+  "white_3A3": "#3a3243",
+  "alpha": "hsla(0,0%,100%,0.1)",
+  "purple_primary": "#9b4de0"
 }

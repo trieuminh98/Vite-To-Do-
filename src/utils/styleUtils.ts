@@ -12,14 +12,13 @@ export const convertToRem = (value: string | number) => {
   return value
 }
 
-export const generateTextStyles = (obj: CSSTextStyles & { [k: string]: any }) => {
-  const { bold = 'md', size = 'md', lHeight = '', lSpacing = '', tAlign = 'left', color = 'white' } = obj
+export const generateTextStyles = (obj: CSSTextStyles) => {
+  const { bold = 'md', size = 'md', lHeight = '', lSpacing = '', color = 'white' } = obj
   return {
     fontWeight: FONT_WEIGHT[bold] || undefined,
     size: convertToRem(FONT_SIZE[size]),
     lineHeight: convertToRem(lHeight),
     letterSpacing: convertToRem(lSpacing),
-    textAlign: tAlign,
     color: color || Colors[color]
   }
 }

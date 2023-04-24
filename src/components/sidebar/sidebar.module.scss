@@ -15,9 +15,24 @@
       svg {
         fill: $white;
       }
+      .selected_tab {
+        background: $alpha;
+        border-left: 3px solid $purple_primary;
+      }
     }
-    .red {
-      background-color: red;
+    .btn_expanded_container {
+      margin: 10px;
+      text-align: center;
+      .btn_expanded {
+        background-color: $alpha;
+        width: rem(30px);
+        height: rem(35px);
+        min-width: fit-content;
+        border-radius: 50%;
+        svg {
+          fill: $white;
+        }
+      }
     }
   }
 }
