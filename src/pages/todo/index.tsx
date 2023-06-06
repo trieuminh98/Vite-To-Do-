@@ -1,4 +1,4 @@
-import Box from '~/elements/box'
+import { Box } from '@mui/material'
 
 const TodoPage = () => {
   return <Box>To Do Page</Box>

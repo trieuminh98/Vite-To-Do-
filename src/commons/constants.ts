@@ -7,15 +7,15 @@ export enum PATH {
   TODO = 'TODO'
 }
 export const FONT_SIZE = {
-  xs: '8px',
-  '2xs': '10px',
-  sm: '12px',
-  '2sm': '13px',
-  md: '14px',
-  '2md': '16px',
-  lg: '18px',
-  xl: '20px',
-  '2xl': '24px'
+  xs: 8,
+  '2xs': 10,
+  sm: 12,
+  '2sm': 13,
+  md: 14,
+  '2md': 16,
+  lg: 18,
+  xl: 20,
+  '2xl': 24
 }
 
 export const FONT_WEIGHT = {

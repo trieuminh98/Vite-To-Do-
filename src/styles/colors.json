@@ -5,6 +5,10 @@
   "white": "#ffffff",
   "purple_231": "#231b2e",
   "white_3A3": "#3a3243",
+  "white-eee": "#eeeeee",
   "alpha": "hsla(0,0%,100%,0.1)",
-  "purple_primary": "#9b4de0"
+  "purple_primary": "#9b4de0",
+  "link_text_hover": "#c273ed",
+  "layout-bg": "#170f23",
+  "text-secondary": "hsla(0,0%,100%,0.5)"
 }

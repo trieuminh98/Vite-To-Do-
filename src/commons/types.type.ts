@@ -19,3 +19,15 @@ export type CSSTextStyles = {
   lSpacing?: number | string
   color?: keyof typeof Colors
 }
+
+export type SongInfo = {
+  id: number
+  songName: string
+  author: string
+  publicDay: string
+  album: string
+  producer: string
+  category: string
+  provider: string
+  img: string
+}

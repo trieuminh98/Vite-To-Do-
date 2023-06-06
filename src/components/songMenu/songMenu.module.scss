@@ -1,0 +1,24 @@
+@import '~/styles/variables.scss';
+
+.song_menu {
+  .group_btn {
+    background-color: $alpha;
+    border-radius: rem(5px);
+    button {
+      padding: rem(16px);
+      &:hover {
+        background-color: $alpha;
+      }
+    }
+  }
+  .menu {
+    display: flex;
+    gap: rem(16px);
+    p {
+      margin: auto 0;
+    }
+    svg {
+      fill: $white;
+    }
+  }
+}

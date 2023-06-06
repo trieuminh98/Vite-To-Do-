@@ -1,4 +1,10 @@
+@import '~/styles/variables.scss';
+
 .init {
   padding: 0;
-  width: 100%;
+}
+
+.grey_bg {
+  background-color: $alpha !important;
+  color: $purple_primary !important;
 }

@@ -2,6 +2,7 @@ import AddIcon from '@mui/icons-material/Add'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import {
+  Box,
   CSSObject,
   List,
   ListItem,
@@ -14,7 +15,7 @@ import {
   useTheme
 } from '@mui/material'
 import MuiDrawer from '@mui/material/Drawer'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   ExploreIcon,
   FollowIcon,
@@ -28,8 +29,8 @@ import {
 } from '~/assets/svgs'
 import MVIcon from '~/assets/svgs/mvIcon'
 import ZingLogoSimple from '~/assets/svgs/zingLogoSimple'
-import { Box, Button, Divider, IconButton, Typography } from '~/elements'
-import { BUTTON_STYLES } from '~/elements/button'
+import { DRAWER_WIDTH, DRAWER_WIDTH_2 } from '~/commons/constants'
+import { Button, Divider, IconButton, Typography } from '~/elements'
 import { DIVIDER_STYLES } from '~/elements/divider'
 import Colors from '~/styles/colors.json'
 import { convertToRem } from '~/utils/styleUtils'
@@ -40,8 +41,6 @@ type SidebarMenuDataType = {
   title: string
   icon: JSX.Element
 }
-
-const drawerWidth = 240
 
 const SidebarMenuData = [
   {
@@ -94,17 +93,8 @@ const SidebarMenuData_2 = [
   }
 ] as SidebarMenuDataType[]
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar
-}))
-
 const Drawer = styled(MuiDrawer, { shouldForwardProp: prop => prop !== 'open' })(({ theme, open }) => ({
-  width: drawerWidth,
+  width: DRAWER_WIDTH,
   flexShrink: 0,
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
@@ -119,7 +109,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: prop => prop !== 'open' })
 }))
 
 const openedMixin = (theme: Theme): CSSObject => ({
-  width: drawerWidth,
+  width: DRAWER_WIDTH,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen
@@ -133,9 +123,9 @@ const closedMixin = (theme: Theme): CSSObject => ({
     duration: theme.transitions.duration.leavingScreen
   }),
   overflowX: 'hidden',
-  width: `calc(${theme.spacing(7)} + 1px)`,
+  width: `${DRAWER_WIDTH_2}px`,
   [theme.breakpoints.up('sm')]: {
-    width: `calc(${theme.spacing(8)} + 1px)`
+    width: `${DRAWER_WIDTH_2}px`
   }
 })
 
@@ -199,7 +189,7 @@ const Sidebar = () => {
         {xsMatches ? (
           <>
             {open && (
-              <Button sx={{ width: 'auto', ml: 0.25 }} defaultStyle={BUTTON_STYLES.TRANSPARENT}>
+              <Button sx={{ width: 'auto', ml: 0.25 }} defaultStyle="TRANSPARENT">
                 <AddIcon />
                 &ensp;
                 <Typography sx={{ mr: 2.5 }} bold="2xl" size="md" align="center">
@@ -210,7 +200,10 @@ const Sidebar = () => {
             <ExpandBtn />
           </>
         ) : (
-          <Button sx={{ borderTop: `1px solid ${Colors.grey_001}` }} defaultStyle={BUTTON_STYLES.TRANSPARENT}>
+          <Button
+            sx={{ borderTop: `1px solid ${Colors.grey_001}`, width: '100%', height: '54px' }}
+            defaultStyle="TRANSPARENT"
+          >
             <AddIcon />
             &ensp;
             <Typography sx={{ mr: 4 }} bold="2xl" size="md" align="center">
@@ -221,8 +214,20 @@ const Sidebar = () => {
       </Box>
     </Box>
   )
+
+  useEffect(() => {
+    xsMatches ? setOpen(false) : setOpen(true)
+  }, [xsMatches])
+
   return (
-    <Box className={styles.sidebar_container}>
+    <Box
+      sx={{
+        '.MuiDrawer-paper': {
+          borderRight: 'none'
+        }
+      }}
+      className={styles.sidebar_container}
+    >
       <Drawer variant="permanent" open={open}>
         {drawer}
       </Drawer>

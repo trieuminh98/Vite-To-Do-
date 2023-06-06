@@ -1,0 +1,17 @@
+@import '~/styles/variables.scss';
+
+.carousel {
+  .carousel_img {
+    padding: rem(12px);
+    img {
+      border-radius: rem(8px);
+      height: rem(232px);
+      width: 100%;
+    }
+  }
+  .new_release {
+    .filter_btn {
+      background: red;
+    }
+  }
+}

@@ -1,13 +1,12 @@
-import { AppBar, CssBaseline, Toolbar } from '@mui/material'
+import { AppBar, Box, CssBaseline, Toolbar } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 import { Header, Sidebar } from '~/components'
-import { Box } from '~/elements'
 
 const Layout = () => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed">
+      <AppBar sx={{ background: 'transparent', boxShadow: 'none' }} position="fixed">
         <Header />
       </AppBar>
       <Box zIndex={1203} component="nav" aria-label="side bar">
@@ -19,7 +18,8 @@ const Layout = () => {
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3
+          p: 3,
+          width: '75%'
         }}
       >
         <Toolbar />

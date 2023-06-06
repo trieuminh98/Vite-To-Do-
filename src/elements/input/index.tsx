@@ -1,9 +1,13 @@
-import { OutlinedInput as MInput, InputProps as MInputProps } from '@mui/material'
+import { InputProps as MInputProps } from '@mui/material'
+import { styledInput } from './styled'
 
-export type InputProps = MInputProps & {}
+export type InputProps = MInputProps & {
+  defaultStyle?: keyof typeof styledInput
+}
 
-const Input = (props: InputProps) => {
-  return <MInput {...props} />
+const Input = ({ defaultStyle, ...rest }: InputProps) => {
+  const Component = defaultStyle ? styledInput[defaultStyle] : styledInput['DEFAULT']
+  return <Component {...rest} />
 }
 
 export default Input

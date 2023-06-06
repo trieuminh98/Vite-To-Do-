@@ -1,28 +1,13 @@
-import { IconButton as MIconButton, IconButtonProps as MIconButtonProps } from '@mui/material'
-import { concatenateStr } from '~/utils/stringUtils'
-import styles from './iconButton.module.scss'
+import { IconButtonProps as MIconButtonProps } from '@mui/material'
+import { styledIconButton } from './styled'
 
-export enum ICON_BUTTON_STYLES {
-  _DEFAULT = '_DEFAULT'
+export type ButtonProps = MIconButtonProps & {
+  defaultStyle?: keyof typeof styledIconButton
 }
 
-export type IconButtonProps = MIconButtonProps & {
-  defaultStyle?: keyof typeof ICON_BUTTON_STYLES
-}
-
-const IconButton = ({ children, defaultStyle, className: customClassName, ...rest }: IconButtonProps) => {
-  return (
-    <MIconButton
-      className={concatenateStr(
-        styles.init,
-        defaultStyle ? styles[defaultStyle.toLocaleLowerCase()] : '',
-        customClassName || ''
-      )}
-      {...rest}
-    >
-      {children}
-    </MIconButton>
-  )
+const IconButton = ({ children, defaultStyle, ...rest }: ButtonProps) => {
+  const Component = defaultStyle ? styledIconButton[defaultStyle] : styledIconButton['DEFAULT']
+  return <Component {...rest}>{children}</Component>
 }
 
 export default IconButton

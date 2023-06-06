@@ -1,0 +1,73 @@
+@import '~/styles/variables.scss';
+
+.header {
+  height: rem(70px);
+  background: $layout-bg;
+  .header_container {
+    display: flex;
+    width: 100%;
+    .flex_box {
+      display: flex;
+      gap: rem(10px);
+      &:not(:first-child) {
+        margin: 0 rem(20px) 0 rem(40px);
+        justify-content: flex-end;
+      }
+      width: 100%;
+      .navigate_btn {
+        svg {
+          fill: $white;
+          opacity: 0.3;
+        }
+      }
+      .search_input {
+        background-color: $alpha;
+        height: rem(40px);
+        border-radius: rem(20px);
+        width: 100%;
+        max-width: rem(440px);
+        flex-flow: row nowrap;
+        min-width: rem(95px);
+        input {
+          margin: 0 rem(20px) 0 rem(5px);
+          &::placeholder {
+            font-size: rem(14px);
+            line-height: rem(34px);
+            color: $white-eee;
+          }
+        }
+        svg {
+          fill: $white;
+          margin-left: rem(10px);
+          stroke: black;
+        }
+      }
+      .download_btn {
+        border-radius: rem(999px);
+        padding: rem(10px) rem(24px);
+        height: rem(40px);
+        p {
+          color: $link_text_hover;
+        }
+        &:hover {
+          p {
+            color: $purple_primary;
+          }
+        }
+      }
+      .icon_btn {
+        height: rem(40px);
+        width: rem(40px);
+        svg {
+          fill: $white;
+          transform: scale(0.8);
+        }
+      }
+      .login_btn {
+        border-radius: rem(999px);
+        height: rem(40px);
+        padding: rem(10px) rem(24px);
+      }
+    }
+  }
+}

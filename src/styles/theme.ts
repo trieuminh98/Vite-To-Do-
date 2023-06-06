@@ -31,7 +31,7 @@ const theme = createTheme({
       fontSize: convertToRem(14),
       fontWeight: 400,
       color: 'inherit',
-      lineHeight: convertToRem(20),
+      lineHeight: 'normal',
       letterSpacing: 0,
       textTransform: 'none'
     }

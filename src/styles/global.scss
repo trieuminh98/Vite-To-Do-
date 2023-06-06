@@ -1,10 +1,64 @@
 @font-face {
   font-family: 'Inter';
-  src: url(~/assets/fonts/Inter/Inter-Regular.ttf), url(~/assets/fonts/Inter/Inter-Bold.ttf),
-    url(~/assets/fonts/Inter/Inter-Black.ttf), url(~/assets/fonts/Inter/Inter-Light.ttf),
-    url(~/assets/fonts/Inter/Inter-Medium.ttf), url(~/assets/fonts/Inter/Inter-Thin.ttf),
-    url(~/assets/fonts/Inter/Inter-ExtraLight.ttf), url(~/assets/fonts/Inter/Inter-SemiBold.ttf),
-    url(~/assets/fonts/Inter/Inter-ExtraBold.ttf);
+  src: url(~/assets/fonts/Inter/Inter-Regular.ttf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-Medium.ttf) format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-SemiBold.ttf) format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-Bold.ttf) format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-ExtraBold.ttf) format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-Black.ttf) format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-Light.ttf) format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-ExtraLight.ttf) format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(~/assets/fonts/Inter/Inter-Thin.ttf) format('opentype');
+  font-weight: 100;
+  font-style: normal;
 }
 
 @import './variables.scss';
@@ -12,8 +66,9 @@
 @import 'sass-rem';
 
 body {
-  font-family: 'Inter';
+  font-family: Inter;
   min-height: 100vh;
+  background: $layout-bg !important;
 }
 
 div[role='button'],

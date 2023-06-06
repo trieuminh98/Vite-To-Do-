@@ -16,9 +16,9 @@ export const generateTextStyles = (obj: CSSTextStyles) => {
   const { bold = 'md', size = 'md', lHeight = '', lSpacing = '', color = 'white' } = obj
   return {
     fontWeight: FONT_WEIGHT[bold] || undefined,
-    size: convertToRem(FONT_SIZE[size]),
-    lineHeight: convertToRem(lHeight),
+    fontSize: convertToRem(FONT_SIZE[size]),
+    lineHeight: lHeight,
     letterSpacing: convertToRem(lSpacing),
-    color: color || Colors[color]
+    color: (color && Colors[color]) || Colors['white']
   }
 }
