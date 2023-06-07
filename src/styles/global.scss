@@ -76,6 +76,10 @@ button {
   cursor: pointer;
 }
 
+img {
+  object-fit: cover;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: rem(4px);

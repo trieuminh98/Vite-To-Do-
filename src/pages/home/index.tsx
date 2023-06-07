@@ -96,7 +96,7 @@ const HomePage = () => {
         </Box>
         <Grid mt={2} container spacing={2}>
           {songInfos.map((songInfo: SongInfo) => (
-            <Grid key={songInfo.id} item xs={6} lg={4}>
+            <Grid key={songInfo.id} item xs={12} sm={6} lg={4}>
               <MediaBox {...{ songInfo }} />
             </Grid>
           ))}
